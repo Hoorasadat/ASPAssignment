@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace DALClasses
 {
-    class CustomerDA
-    {
+    public class CustomerDA
+    {        
         // a method to get a list of customers from the database:
         public static List<Customer> GetCustomers()
         {
-            // make an empty list of customers
+            // make an empty list of customers which is public
             List<Customer> CustList = new List<Customer>();
-
+        
             // make an empty customer object
             Customer cust;
 
@@ -65,5 +65,18 @@ namespace DALClasses
             return CustList;
         }
 
+
+        // a method to find a specific customer with given first name and last name
+        public static Customer FindCustomer(string FN, string LN)
+        {
+            // make an empty list of customers which is public
+            List<Customer> CustList = new List<Customer>();
+
+            CustList = GetCustomers();
+
+            Customer cust = new Customer();
+            cust = CustList.SingleOrDefault(c => c.FirstName == FN && c.LastName == LN);
+            return cust;
+        }
     }
 }

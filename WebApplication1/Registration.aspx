@@ -7,41 +7,123 @@
         .auto-style3 {
             width: 353px;
         }
+        .auto-style4 {
+            width: 685px;
+        }
+        .auto-style5 {
+            width: 324px;
+        }
+        .auto-style6 {
+            width: 372px;
+            height: 44px;
+        }
+        .auto-style7 {
+            width: 324px;
+            height: 44px;
+        }
+        .auto-style8 {
+            width: 372px;
+        }
     </style>
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table class="auto-style2" style="text-align: center;">
+    <table class="auto-style4" style="text-align: center;">
         <tr>
-            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; text-decoration: underline;">Login<br />
+            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">You are a member?<br />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">Please login here:<br />
                 <br />
             </td>
         </tr>
 
         <tr>
-            <td class="auto-style3" style="text-indent: 250px">First Name:</td>
-            <td>
-                <asp:TextBox ID="uxFName" runat="server" Width="166px"></asp:TextBox>
+            <td class="auto-style6" style="text-indent: 250px; text-align: justify;">First Name:</td>
+            <td class="auto-style7" style="text-align: center">
+                <asp:TextBox ID="txtFName" runat="server" Width="166px"></asp:TextBox>
             </td>
         </tr>
 
         <tr>
-            <td class="auto-style3" style="text-indent: 250px">Last Name:</td>
-            <td>
-                <asp:TextBox ID="uxLName" runat="server" Width="165px"></asp:TextBox>
+            <td class="auto-style8" style="text-indent: 250px; text-align: justify;">Last Name:</td>
+            <td class="auto-style5" style="text-align: center">
+                <asp:TextBox ID="txtLName" runat="server" Width="165px"></asp:TextBox>
             </td>
         </tr>
             
         <tr>
-            <td colspan="2"/>
-
-            </td>
+            <td colspan="2" style="height:50px; text-align: justify"/>
+                <asp:Label ID="lblLogErr" runat="server" BackColor="White" Font-Names="Arial" Font-Size="Smaller" ForeColor="Red"></asp:Label>
         </tr>
          <tr>
             <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">
-                <asp:Button ID="uxButton" runat="server" Height="28px" Text="Login" Width="72px" />
+                <asp:Button ID="btnLogin" runat="server" Height="28px" Text="Login" Width="72px" OnClick="btnLogin_Click" />
                 <br />
                 <br />
             </td>
         </tr>
     </table>  
 </asp:Content>
+
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <table class="auto-style2" style="text-align: center;">
+        <tr>
+            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">Are you new?<br />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">Please register first:<br />
+                <br />
+            </td>
+        </tr>
+
+        <tr>
+            <td class="auto-style3" style="text-indent: 250px; text-align: justify;">First Name:</td>
+            <td>
+                <asp:TextBox ID="txtFirstName" runat="server" Width="166px"></asp:TextBox>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="auto-style3" style="text-indent: 250px; text-align: justify;">Last Name:</td>
+            <td>
+                <asp:TextBox ID="txtLastName" runat="server" Width="165px"></asp:TextBox>
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td class="auto-style3" style="text-indent: 250px; text-align: justify;">Phone:</td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server" Width="166px"></asp:TextBox>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="auto-style3" style="text-indent: 250px; text-align: justify;">City:</td>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server" Width="165px"></asp:TextBox>
+            </td>
+        </tr>
+            
+        <tr>
+            <td colspan="2" style="height:50px; text-align: justify"/>
+                <asp:Label ID="lblRegErr" runat="server" BackColor="White" Font-Size="Smaller" ForeColor="Red"></asp:Label>
+        </tr>
+         <tr>
+            <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">
+                <asp:Button ID="btnRegister" runat="server" Height="28px" Text="Register" Width="72px" OnClick="btnLogin_Click" />
+                <br />
+                <br />
+            </td>
+        </tr>
+    </table>  
+</asp:Content>
+
