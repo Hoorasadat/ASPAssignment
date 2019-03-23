@@ -50,7 +50,7 @@
 
             <%--footer--%>
             <tr>
-                <td colspan="3" style="width:800px; text-align: center; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold;">&copy CPRG214</td>
+                <td colspan="3" style="width:800px; text-align: center; height: 50px; color: #404D5B; background-color: #9FB8CE; font-family: 'Times New Roman', Times, serif; font-size: large; font-weight: bold;">&copy CPRG214</td>
             </tr>
         </table>
         
