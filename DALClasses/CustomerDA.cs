@@ -13,7 +13,7 @@ namespace DALClasses
         // a method to get a list of customers from the database:
         public static List<Customer> GetCustomers()
         {
-            // make an empty list of customers which is public
+            // make an empty list of customers
             List<Customer> CustList = new List<Customer>();
         
             // make an empty customer object

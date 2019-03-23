@@ -36,7 +36,7 @@ namespace WebApplication1
                         "If you are sure that you have already registered, please get sure that you enter correct info.";
                 else
                 {
-                    lblLogErr.Text = @"You are successfully loged in! If you wish, you can go to the <Lease Slip page> for a new lease.";
+                    lblLogErr.Text = @"You are successfully loged in! If you wish, you can go to the 'Lease Slip page' for a new lease.";
                     Session.Add("customer", cust);
 
                 }

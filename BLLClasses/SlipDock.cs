@@ -8,7 +8,9 @@ namespace BLLClasses
 {
     public class SlipDock
     {
-        //public int DockId { get; set; }
+        public SlipDock() { }
+
+        public int DockId { get; set; }
 
         public string DockName { get; set; }
 

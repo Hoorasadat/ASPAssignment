@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Home.aspx" title="Home"  description="Home page">
     <siteMapNode url="~/Registration.aspx" title=" Login-Registration "  description="Registration/ login page" />
-    <siteMapNode url="~/Slip.Dock.aspx" title="Slips"  description="Available slips by dock page" />
+    <siteMapNode url="~/Slips.aspx" title="Docks-Slips"  description="Available slips by dock page" />
     <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact us page" />
   </siteMapNode>
 </siteMap>

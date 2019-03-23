@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLLClasses;
+using DALClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,21 @@ namespace WebApplication1
         {
             if (Session["customer"] == null)
                 Response.Redirect("~Registration.aspx");
+            else
+            {
+                Customer Cust = new Customer();
+                Cust = (Customer)Session["customer"];
+                int ID = Cust.CustomerID;
+                // make an empty list of slip - dock
+                List<SlipDock> SDList = new List<SlipDock>();
+                SDList = SlipDockDA.GetLeases(ID);
+                grdLeases.DataSource = SDList;
+                DataBind();
+
+                //grdLeases.Columns["DockID"].HeaderText = "Dock #";
+                //grdLeases.Columns["Name"].HeaderText = "Dock Name";
+
+            }
         }
     }
 }
