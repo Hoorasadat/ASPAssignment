@@ -26,8 +26,8 @@
 
             <%--navigator--%>
             <tr>
-                <td colspan="3" style="width:800px; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; word-spacing: 10em; text-indent: 1px;">
-                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2" Font-Underline="True">
+                <td colspan="3" style="width:800px; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; word-spacing: 10em; text-indent: 1px; border-bottom-style: none;">
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2" Font-Underline="True" StaticSubMenuIndent="16px">
                     </asp:Menu>
                     <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
                 </td>
@@ -35,17 +35,23 @@
 
             <%--main body--%>
             <tr>
-                <td style="width:50px; color: #57697D; background-color: #546778;" class="auto-style1"></td>
+                <td rowspan="2" style="width:50px; color: #57697D; background-color: #9FB8CE;" class="auto-style1"></td>
             
-                <td style="padding: 8px; color: #FFFFFF; width:700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal;" class="auto-style1">
+                <td style="border-style: none; padding: 8px; color: #FFFFFF; width: 700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal; vertical-align: middle;" class="auto-style1">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         <p>
-                            <br />
                         </p>
                     </asp:ContentPlaceHolder>
                 </td>  
 
-                <td style="width:50px;color: #57697D; background-color: #546778;" class="auto-style1"></td>
+                <td rowspan="2" style="border-style: none; width: 50px; color: #57697D; background-color: #9FB8CE;" class="auto-style1"></td>
+            </tr>
+
+            <tr>
+                <td style="border-style: none; padding: 4px; color: #FFFFFF; width: 700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal;" class="auto-style1">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>  
             </tr>
 
             <%--footer--%>
