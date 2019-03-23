@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\blog-marine2-2.jpg" />
+    <Content Include="Images\boat-dealer-and-marina-insurance.jpg" />
     <Content Include="Images\inlandmarina_banner.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -106,6 +108,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLLClasses\BLLClasses.csproj">
+      <Project>{896f7834-89c2-4dcb-8d7c-5fca0a88f672}</Project>
+      <Name>BLLClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

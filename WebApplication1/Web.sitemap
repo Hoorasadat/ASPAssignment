@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Home.aspx" title="Home"  description="Home page">
-    <siteMapNode url="~/Registration.aspx" title="Registration"  description="A registration page" />
-    <siteMapNode url="~/Slip.Dock.aspx" title="Slips-Docks"  description="Available slip by dock page" />
-    <siteMapNode url="~/Contact.aspx" title="Contact us"  description="A contact us page" />
+    <siteMapNode url="~/RegistrationLogin.aspx" title=" Registration "  description="Registration/ login page" />
+    <siteMapNode url="~/Slip.Dock.aspx" title="Slips"  description="Available slips by dock page" />
+    <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact us page" />
   </siteMapNode>
 </siteMap>

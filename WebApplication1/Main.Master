@@ -20,14 +20,14 @@
             <%--image--%>
             <tr>
                 <td colspan="3" style="width:800px; height:100px">
-                    <asp:Image ID="Image1" runat="server" ImageAlign="Middle" ImageUrl="~/Images/inlandmarina_banner.jpg" />
+                    <asp:Image ID="Image1" runat="server" ImageAlign="Middle" ImageUrl="~/Images/inlandmarina_banner.jpg" Width="948px" />
                 </td>
             </tr>
 
             <%--navigator--%>
             <tr>
-                <td colspan="3" style="color: #57697D; ">
-                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2">
+                <td colspan="3" style="width:800px; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; word-spacing: 10em; text-indent: 1px;">
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2" Font-Underline="True">
                     </asp:Menu>
                     <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
                 </td>
@@ -35,19 +35,22 @@
 
             <%--main body--%>
             <tr>
-                <td style="width:50px" class="auto-style1"></td>
+                <td style="width:50px; color: #57697D; background-color: #546778;" class="auto-style1"></td>
             
-                <td style="color: #57697D; width:700px" class="auto-style1">
+                <td style="padding: 8px; color: #FFFFFF; width:700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal;" class="auto-style1">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <p>
+                            <br />
+                        </p>
                     </asp:ContentPlaceHolder>
                 </td>  
 
-                <td style="width:50px;color: #57697D" class="auto-style1"></td>
+                <td style="width:50px;color: #57697D; background-color: #546778;" class="auto-style1"></td>
             </tr>
 
             <%--footer--%>
             <tr>
-                <td colspan="3" style="text-align: center; ">&copy;</td>
+                <td colspan="3" style="width:800px; text-align: center; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold;">&copy CPRG214</td>
             </tr>
         </table>
         
