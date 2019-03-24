@@ -89,8 +89,11 @@
 
             </td>
         </tr>
-        <tr>&nbsp;</tr>
+        <tr>
+            <td colspan="3" style="text-align: center">
+                <asp:Button ID="btnLease" runat="server" Text="Lease" OnClick="btnLease_Click" Font-Bold="True" Font-Size="Medium" Font-Underline="True" />
+            </td>
+        </tr>
         
     </table>
-    <asp:Button ID="btnLease" runat="server" Text="Lease" OnClick="btnLease_Click" />
-</asp:Content>
+    </asp:Content>
