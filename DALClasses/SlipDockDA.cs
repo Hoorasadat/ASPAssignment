@@ -71,6 +71,7 @@ namespace DALClasses
         }
 
 
+
         // a method to get a list of empty slips from the database:
         public static List<SlipDock> GetDockSlips()
         {
@@ -200,7 +201,7 @@ namespace DALClasses
             SqlConnection con = InlandMarinaScriptDB.GetConnection();
 
             // creating the proper sql query to extract data from MS SQL server
-            string Query = "SELECT ID, Width, Length, DockID FROM Slip WHERE DockID = @DockID";
+            string Query = "SELECT ID, Width, Length, DockID FROM Slip WHERE DockID = @DockID AND ID NOT IN(SELECT SlipID FROM Lease)";
 
             // creating the proper command to run the query
             SqlCommand comm = new SqlCommand(Query, con);
@@ -245,5 +246,37 @@ namespace DALClasses
 
 
 
+        // a method to lease a slip(adding to the database):
+        public static int InsertLease(int slipId, int customerId)
+        {
+            int LsID;
+            // get connected to the database
+            SqlConnection con = InlandMarinaScriptDB.GetConnection();
+
+            // creating the proper sql query to extract data from MS SQL server
+            string Query = "INSERT INTO Lease (SlipID, CustomerID) OUTPUT inserted.[ID] " +
+                "VALUES(@SlipID, @CustomerID)";
+
+            // creating the proper command to run the query
+            SqlCommand comm = new SqlCommand(Query, con);
+            comm.Parameters.AddWithValue("@SlipID", slipId);
+            comm.Parameters.AddWithValue("@CustomerID", customerId);
+
+            // try to run the command
+            try
+            {
+                con.Open();
+                LsID = (int)comm.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return LsID;
+        }
     }
 }

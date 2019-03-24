@@ -67,7 +67,7 @@ namespace DALClasses
 
 
 
-        // a method to get a list of customers from the database:
+        // a method to register a customer(adding to the database):
         public static int InsertCustomers(string fname, string lname, string phone, string city)
         {
             int custID = 0;

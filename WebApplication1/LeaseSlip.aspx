@@ -37,7 +37,7 @@
     <table>
         <tr>
             <td class="auto-style3">
-                <asp:GridView ID="grdDock" runat="server" BorderStyle="Ridge" BorderWidth="5px" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+                <asp:GridView ID="grdDock" runat="server" BorderStyle="Ridge" BorderWidth="5px" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanged="grdDock_SelectedIndexChanged1">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
@@ -55,7 +55,7 @@
             </td>
             <td style="width:20px">&nbsp;</td>
             <td class="auto-style2">
-                <asp:GridView ID="grdSlip" runat="server" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+                <asp:GridView ID="grdSlip" runat="server" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanged="grdSlip_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
@@ -82,8 +82,15 @@
                 <asp:ObjectDataSource ID="ObjectDataSource3" runat="server"></asp:ObjectDataSource>
             </td>
         </tr>
+        <tr>
+            <td>
+
+                <asp:Label ID="lblLease" runat="server" BackColor="White" Font-Names="Arial" Font-Size="Small" ForeColor="#FF3300"></asp:Label>
+
+            </td>
+        </tr>
         <tr>&nbsp;</tr>
         
     </table>
-    <asp:Button ID="btnLease" runat="server" Text="Lease" />
+    <asp:Button ID="btnLease" runat="server" Text="Lease" OnClick="btnLease_Click" />
 </asp:Content>

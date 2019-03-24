@@ -11,27 +11,32 @@ namespace WebApplication1
 {
     public partial class LeaseSlip : System.Web.UI.Page
     {
+        // a public current customer
+        public Customer Cust = new Customer();
+        public int CustId;
+
+        public int SlId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            // check if the user logs in or not
-            //if (Session["customer"] == null)
+            //check if the user logs in or not
+            if (Session["customer"] == null)
 
-            //    // if not, redirect to the registration page
-            //    Response.Redirect("~/Registration.aspx");
-            //else
-            //{
-            //****************************************************
-            // finding the loged-in user's ID
-            //Customer Cust = new Customer();
-            //Cust = (Customer)Session["customer"];
-            //int ID = Cust.CustomerID;
-            int ID = 1;
+                // if not, redirect to the registration page
+                Response.Redirect("~/Registration.aspx");
+            else
+            {                
+                 //finding the loged-in user's 
+                Cust = (Customer)Session["customer"];
+                CustId = Cust.CustomerID;
+
                 //****************************************************
+
                 // make an empty list of slip - dock
-                List<SlipDock> SDList = new List<SlipDock>();
+                List <SlipDock> SDList = new List<SlipDock>();
 
                 // make a table of previouse leases of the loged-in user
-                SDList = SlipDockDA.GetLeases(ID);
+                SDList = SlipDockDA.GetLeases(CustId);
                 grdLeases.DataSource = SDList;
                 grdLeases.DataBind();
 
@@ -39,6 +44,7 @@ namespace WebApplication1
             //grdLeases.Columns["Name"].HeaderText = "Dock Name";
 
             //****************************************************
+
             // make an empty list of docks
             List<Dock> DockList = new List<Dock>();
 
@@ -49,21 +55,42 @@ namespace WebApplication1
 
             //****************************************************
 
-            //}
+            }
         }
 
-        protected void grdDock_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        protected void grdDock_SelectedIndexChanged1(object sender, EventArgs e)
         {
             GridViewRow row = grdDock.SelectedRow;
             int Id = Convert.ToInt32(row.Cells[1].Text);
 
-            // make an empty list of docks
-            List<Slip> SlipList = new List<Slip>();
-
-            // make a table of all docks
-            SlipList = SlipDockDA.GetSlips(Id);
+            // make an empty list of slips and fill it with a dock's empty slips
+            var SlipList = SlipDockDA.GetSlips(Id);
             grdSlip.DataSource = SlipList;
             grdSlip.DataBind();
+        }
+
+        protected void grdSlip_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = grdSlip.SelectedRow;
+            int SlId = Convert.ToInt32(row.Cells[1].Text);            
+        }
+
+        protected void btnLease_Click(object sender, EventArgs e)
+        {
+            // add a new lease
+            int leaseID = 0;
+            leaseID = SlipDockDA.InsertLease(SlId, CustId);
+
+            // fill a label box with a message
+            if (leaseID == 0)
+                lblLease.Text = "You successfully lease a slip.";
+            else
+                lblLease.Text = "You couldn't lease a slip! Call us to help you.";
+
+            //// refresh
+            //Response.Redirect("~/LeaseSlip.aspx");
         }
     }
 }

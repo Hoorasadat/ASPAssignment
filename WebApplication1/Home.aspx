@@ -18,7 +18,7 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <p class="MsoNormal">
+    <p class="MsoNormal" style="text-align: center">
         <asp:Image ID="Image2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/blog-marine2-2.jpg" Width="799px" BorderColor="White" BorderStyle="Double" BorderWidth="5px" />
     </p>
 </asp:Content>
