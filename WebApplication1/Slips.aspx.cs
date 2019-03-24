@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLLClasses;
+using DALClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,13 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // make an empty list of slip-dock
+            List<SlipDock> DkSlList = new List<SlipDock>();
 
+            DkSlList = SlipDockDA.GetDockSlips();
+
+            grdSlips.DataSource = DkSlList;
+            DataBind();
         }
     }
 }

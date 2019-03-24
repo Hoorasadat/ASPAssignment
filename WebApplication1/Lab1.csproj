@@ -72,6 +72,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Images\blog-marine2-2.jpg" />
     <Content Include="Images\boat-dealer-and-marina-insurance.jpg" />
+    <Content Include="Images\Docks.jpg" />
     <Content Include="Images\inlandmarina_banner.jpg" />
     <Content Include="LeaseSlip.aspx" />
     <Content Include="Registration.aspx" />
