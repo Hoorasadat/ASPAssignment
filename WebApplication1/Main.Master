@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            height: 261px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <table>
+            <%--image--%>
+            <tr>
+                <td colspan="3" style="width:800px; height:100px">
+                    <asp:Image ID="Image1" runat="server" ImageAlign="Middle" ImageUrl="~/Images/inlandmarina_banner.jpg" Width="948px" />
+                </td>
+            </tr>
+
+            <%--navigator--%>
+            <tr>
+                <td colspan="3" style="width:800px; height: 50px; color: #57697D; background-color: #9FB8CE; font-family: arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; word-spacing: 10em; text-indent: 1px; border-bottom-style: none;">
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticDisplayLevels="2" Font-Underline="True" StaticSubMenuIndent="16px">
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </td>
+            </tr>
+
+            <%--main body--%>
+            <tr>
+                <td rowspan="2" style="width:50px; color: #57697D; background-color: #9FB8CE;" class="auto-style1"></td>
+            
+                <td style="border-style: none; padding: 8px; color: #FFFFFF; width: 700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal; vertical-align: middle;" class="auto-style1">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <p>
+                        </p>
+                    </asp:ContentPlaceHolder>
+                </td>  
+
+                <td rowspan="2" style="border-style: none; width: 50px; color: #57697D; background-color: #9FB8CE;" class="auto-style1"></td>
+            </tr>
+
+            <tr>
+                <td style="border-style: none; padding: 4px; color: #FFFFFF; width: 700px; font-size: large; background-color: #3C87B6; text-align: justify; text-indent: 2px; white-space: normal;" class="auto-style1">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>  
+            </tr>
+
+            <%--footer--%>
+            <tr>
+                <td colspan="3" style="width:800px; text-align: center; height: 50px; color: #404D5B; background-color: #9FB8CE; font-family: 'Times New Roman', Times, serif; font-size: large; font-weight: bold;">&copy CPRG214</td>
+            </tr>
+        </table>
+        
+    </form>
+</body>
+</html>
