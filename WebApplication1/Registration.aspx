@@ -107,16 +107,14 @@
 
         <tr>
             <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: medium; font-weight: bold; text-align: center;">
-                <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="#1B3D8B" BackColor="#B5C0CA" NavigateUrl="~/LeaseSlip.aspx" ViewStateMode="Enabled">Lease Slip page</asp:HyperLink>
+                <asp:HyperLink ID="hplLease" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="#1B3D8B" BackColor="#B5C0CA" NavigateUrl="~/LeaseSlip.aspx" ViewStateMode="Enabled" Visible="False">Lease Slip page</asp:HyperLink>
                 &nbsp;<br />
                 </td>
         </tr>
 
         <tr>
             <td colspan="2" style="font-size: medium; color: #FFFFFF; font-weight: bold;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                (Log in first!)
-            </td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
 
     </table>  
@@ -177,7 +175,7 @@
         </tr>
          <tr>
             <td colspan="2" class="auto-style3" style="text-indent: 150px; font-size: x-large; font-weight: bold; ">
-                <asp:Button ID="btnRegister" runat="server" Height="28px" OnClick="btnRegister_Click1" Text="Register" Width="72px" ValidationGroup="2" Font-Bold="True" Font-Size="Medium" Font-Underline="True" />
+                <asp:Button ID="btnRegister" runat="server" Height="28px" OnClick="btnRegister_Click1" Text="Register" Width="79px" ValidationGroup="2" Font-Bold="True" Font-Size="Medium" Font-Underline="True" />
                 <br />
                 <br />
             </td>

@@ -249,7 +249,7 @@ namespace DALClasses
         // a method to lease a slip(adding to the database):
         public static int InsertLease(int slipId, int customerId)
         {
-            int LsID;
+            int LsID = 0;
             // get connected to the database
             SqlConnection con = InlandMarinaScriptDB.GetConnection();
 
@@ -266,7 +266,12 @@ namespace DALClasses
             try
             {
                 con.Open();
-                LsID = (int)comm.ExecuteScalar();
+                comm.ExecuteNonQuery();
+                string NewQuery = "SELECT IDENT_CURRENT('Lease') FROM Lease";
+
+                SqlCommand sqlCommand = new SqlCommand(NewQuery, con);
+                LsID = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
             }
             catch (Exception ex)
             {

@@ -37,11 +37,8 @@
     <table>
         <tr>
             <td class="auto-style3">
-                <asp:GridView ID="grdDock" runat="server" BorderStyle="Ridge" BorderWidth="5px" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanged="grdDock_SelectedIndexChanged1">
+                <asp:GridView ID="grdDock" runat="server" BorderStyle="Ridge" BorderWidth="5px" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdDock_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
-                    <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                    </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
@@ -55,11 +52,8 @@
             </td>
             <td style="width:20px">&nbsp;</td>
             <td class="auto-style2">
-                <asp:GridView ID="grdSlip" runat="server" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanged="grdSlip_SelectedIndexChanged">
+                <asp:GridView ID="grdSlip" runat="server" CellPadding="4" Font-Size="Medium" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanging="grdSlip_SelectedIndexChanging" AutoGenerateSelectButton="True">
                     <AlternatingRowStyle BackColor="White" />
-                    <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                    </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
@@ -91,7 +85,7 @@
         </tr>
         <tr>
             <td colspan="3" style="text-align: center">
-                <asp:Button ID="btnLease" runat="server" Text="Lease" OnClick="btnLease_Click" Font-Bold="True" Font-Size="Medium" Font-Underline="True" />
+                <asp:Button ID="btnLease" runat="server" Text="Lease" OnClick="btnLease_Click" Font-Bold="True" Font-Size="Medium" Font-Underline="True" Visible="False" />
             </td>
         </tr>
         

@@ -13,8 +13,16 @@ namespace WebApplication1
     {
         public Customer cust = new Customer();
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //check if the user logs in or not
+            if (Session["customer"] != null)
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+                // if not, redirect from the registration page
+                Response.Redirect("~/LeaseSlip.aspx");
+        }
+
+                protected void btnLogin_Click(object sender, EventArgs e)
         {
             string FN = txtFName.Text;
             string LN = txtLName.Text;
@@ -35,7 +43,9 @@ namespace WebApplication1
 
                     Session.Add("customer", cust);
 
-                    //Response.Redirect("~/LeaseSlip.aspx");
+                    hplLease.Visible = true;
+                    btnLogin.Visible = false;
+
                 }
                     
             }
@@ -53,29 +63,37 @@ namespace WebApplication1
             string PN = txtPhone.Text;
             string CY = txtCity.Text;
 
-            try
+            Customer customer = CustomerDA.FindCustomer(FN, LN);
+
+            if (customer == null)
             {
-                // make an empty customer object
-                Customer cust = new Customer();
+                try
+                {
+                    // make an empty customer object
+                    Customer cust = new Customer();
 
-                cust.CustomerID = CustomerDA.InsertCustomers(FN, LN, PN, CY);
-                cust.FirstName = FN;
-                cust.LastName = LN;
-                cust.Phone = PN;
-                cust.City = CY;
+                    cust.CustomerID = CustomerDA.InsertCustomers(FN, LN, PN, CY);
+                    cust.FirstName = FN;
+                    cust.LastName = LN;
+                    cust.Phone = PN;
+                    cust.City = CY;
 
-                lblRegErr.Text = @"You are successfully Registered! If you wish, you can go to the 'Lease Slip page' for a new lease.";
+                    lblRegErr.Text = @"You are successfully Registered! If you wish, you can go to the 'Lease Slip page' for a new lease.";
 
-                Session.Add("customer", cust);
+                    Session.Add("customer", cust);
 
-                //Response.Redirect("~/LeaseSlip.aspx.aspx");
+                    hplLease.Visible = true;
+                    btnRegister.Visible = false;
 
+                }
+
+                catch (Exception ex)
+                {
+                    throw new Exception("Data error occurred. Contact application support.", ex);
+                }
             }
-
-            catch (Exception ex)
-            {
-                throw new Exception("Data error occurred. Contact application support.", ex);
-            }
+            else
+                lblRegErr.Text = " You have already registered!";
         }
     }
 }

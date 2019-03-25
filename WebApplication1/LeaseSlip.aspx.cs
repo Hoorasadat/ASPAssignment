@@ -13,7 +13,7 @@ namespace WebApplication1
     {
         // a public current customer
         public Customer Cust = new Customer();
-        public int CustId = 0;
+        public int CustId;
 
         public int SlId = 0;
 
@@ -49,6 +49,8 @@ namespace WebApplication1
             }
         }
 
+
+
         private void DisplayeOldLeas()
         {
             // make an empty list of slip - dock
@@ -63,7 +65,9 @@ namespace WebApplication1
             //grdLeases.Columns["Name"].HeaderText = "Dock Name";
         }
 
-        protected void grdDock_SelectedIndexChanged1(object sender, EventArgs e)
+               
+
+        protected void grdDock_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = grdDock.SelectedRow;
             int Id = Convert.ToInt32(row.Cells[1].Text);
@@ -72,20 +76,23 @@ namespace WebApplication1
             var SlipList = SlipDockDA.GetSlips(Id);
             grdSlip.DataSource = SlipList;
             grdSlip.DataBind();
+
         }
 
 
 
-        protected void grdSlip_SelectedIndexChanged(object sender, EventArgs e)
+        protected void grdSlip_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            GridViewRow row = grdSlip.SelectedRow;
-            int SlId = Convert.ToInt32(row.Cells[1].Text);            
+            btnLease.Visible = true;    
         }
 
-
-
+        
+        
         protected void btnLease_Click(object sender, EventArgs e)
         {
+            GridViewRow row = grdSlip.SelectedRow;
+            SlId = Convert.ToInt32(row.Cells[1].Text);
+
             if (SlId != 0)
             {
                 // add a new lease
@@ -93,7 +100,7 @@ namespace WebApplication1
                 leaseID = SlipDockDA.InsertLease(SlId, CustId);
 
                 // fill a label box with a message
-                if (leaseID == 0)
+                if (leaseID != 0)
                     lblLease.Text = "You successfully lease a slip.";
                 else
                     lblLease.Text = "You couldn't lease a slip! Call us to help you.";
@@ -105,5 +112,6 @@ namespace WebApplication1
                 lblLease.Text = "Select a slip before pressing the lease button!";
 
         }
+
     }
 }
